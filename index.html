@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>MITOLOGIA HINDÚ</title>
+    <LINK href="images/imagenes/ico1-n.png" rel="icon" type="img/png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="images/css/infoDioses.css">
+    <link rel="stylesheet" href="images/css/style.css">
+    <link rel="stylesheet" href="images/css/menu.css">
+
+    <!--recuerda habilitar el autoplay en "chrome://flags/#autoplay-policy"-->
+    <audio id="musica" src="audio/india2.mp3" autoplay loop></audio>
+</head>
+
+<script>
+    //CONFIGURACION OJOS HEADER ------------------------------------------------------
+    var ojos = document.getElementsByClassName('pupila');
+    document.onmousemove = function () {
+        var x = event.clientX * 100 / window.innerWidth + "%";
+        var y = event.clientY * 100 / window.innerHeight + "%";
+
+        for (let index = 0; index < 2; index++) {
+            ojos[index].style.left = x;
+            ojos[index].style.top = y;
+            ojos[index].style.transform = "translate(-" + x + ", -" + y + ")";
+
+
+        }
+    }
+
+    //CONFIGURACION PAUSA/PLAY MUSICA ------------------------------------------------------
+
+    var x = document.getElementById("musica");
+    var pausa = false;
+    function musica() {
+
+        //play
+        //x.play(); 
+        //pausa
+        //x.pause();
+
+        if (pausa == false) {
+            x.pause();
+            pausa = true;
+            document.getElementById("audio").src = "images/imagenes/audioOff.png";
+            mySnackbar();
+        }
+        else {
+            x.play();
+            pausa = false;
+            document.getElementById("audio").src = "images/imagenes/audioOn.png";
+            mySnackbar();
+        }
+    }
+
+    //snackbar ------------------------------------------------------------
+    mySnackbar();
+    function mySnackbar() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+</script>
+
+<body>
+    <!--snackbar: barra de mensaje que aparece por unos segundos-->
+    <div id="snackbar">
+        <p>puedes ajustar AUTOPLAY en:</p>
+        <p>"chrome://flags/#autoplay-policy"</p>
+    </div>
+
+    <header id="main-header">
+
+        <img class="logoImagen" src="images/imagenes/logo.png" alt="abc" title="imagen abc" />
+
+        <!--  Ojos que se mueven-->
+        <div class="fondo">
+            <div class="eyes">
+                <div class="eye">
+                    <div class="pupila"></div>
+                </div>
+                <div class="eye">
+                    <div class="pupila"></div>
+                </div>
+            </div>
+        </div>
+
+        <a id="logo-header" href="#DESARROLLADORES2">
+            <span class="site-name">By CodeInk</span>
+            <span class="site-desc">FullStack / Bictia</span>
+        </a> <!-- / #logo-header -->
+
+        <nav>
+            <ul>
+                <li class="btnHeader"><a id="punto1" href="#Bienvenido">Historia</a></li>
+                <li class="btnHeader"><a id="punto2" href="#DIOSES">Dioses</a></li>
+                <li class="btnHeader"><a id="punto3" href="#DESARROLLADORES">Developers</a></li>
+                <li class="btnHeader"><a id="audio" href="#" onclick="musica()">
+                        <img src="images/imagenes/audioOn.png" style="height: 15px;"></a></li>
+            </ul>
+        </nav>
+
+    </header><!-- / #main-header -->
+
+
+    <main>
+
+        <!-- PARTE PRINCIPAL PAGINA WEB -->
+
+
+        <section id="Bienvenido">
+            <div class="infoMito">
+                <div style="text-align: center;">
+                    <img src="images/Imagenes/titulo.png" style="height: 300px;">
+                </div>
+
+                <div class="infoMitoS">
+
+                    <div class="infoMitoSS">
+                        <p class="historia">El término mitología hindú se refiere colectivamente a un largo cuerpo de
+                            literatura de la India
+                            (esencialmente, la mitología del hinduismo) que detalla las vidas y los tiempos de
+                            personajes
+                            legendarios, deidades y de encarnaciones divinas en la Tierra, a menudo entremezcladas con
+                            discursos doctrinarios y éticos.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!--INFO DIOSES --------------------------------------------------------------------------------------------->
+        <section id="DIOSES">
+
+            <div class="infoDioses">
+
+                <!--MENU LATERAL--------------------------------------------------------------------------------------------------------->
+                <!--fuente: https://www.w3schools.com/css/css_navbar.asp-->
+
+                <ul class="menuDioses" contenedor1 id="contenedor1">
+                    <br>
+                    <h1 class="titleMenu">Dioses</h1>
+                    <br>
+                    <li><a class="active" href="#" onclick="home()">Home</a></li>
+                    <li><a href="#DIOSES" onclick="vamana()"><img class="icoMenu"
+                                src="images/Imagenes/infoDioses/ico3.png">Vamana</a></li>
+                    <li><a href="#DIOSES" onclick="brahma()"><img class="icoMenu"
+                                src="images/Imagenes/infoDioses/ico7.png">Brahma</a></li>
+                    <li><a href="#DIOSES" onclick="ganesha()"><img class="icoMenu"
+                                src="images/Imagenes/infoDioses/ico1.png">Ganesha</a></li>
+                    <li><a href="#DIOSES" onclick="agni()"><img class="icoMenu"
+                                src="images/Imagenes/infoDioses/ico9.png">Agni</a></li>
+                    <li><a href="#DIOSES" onclick="rama()"><img class="icoMenu"
+                                src="images/Imagenes/infoDioses/ico6.png">Rama</a></li>
+                    <li><a href="#DIOSES" onclick="kali()"><img class="icoMenu"
+                                src="images/Imagenes/infoDioses/ico8.png">Kali</a></li>
+                </ul>
+
+                <!--INFORMACION DEL DIOS -------------------------------------------------------------->
+
+                <div class="cajaDios">
+
+                    <!--triangulo------------>
+                    <div class="triangulo"></div>
+
+                    <h1 class="tituloCaja" id="titulo1" style="top:10%">agni</h1>
+                    <h1 class="tituloCaja">___________</h1>
+                    <p class="parrafoCaja">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus ipsam quam sapiente
+                        similique fuga pariatur sunt accusantium aspernatur laudantium. Pariatur officia magnam iure.
+                        Saepe sed totam nihil officiis possimus.
+                    </p>
+
+                </div>
+
+                <!--PERSNAJES--------------------------------------------------------------->
+
+                <div class="fondoHome">
+                    <img class="fondoHome" src="images/Imagenes/infoDioses/fondoHome2.png">
+                </div>
+
+                <div class="personajes">
+                    <img class="imgPersonaje" src="images/Imagenes/infoDioses/vamana.png">
+                </div>
+            </div>
+
+            <script src="images/JavaScript/jquery-3.4.1.min.js"></script>
+
+            <script>
+                function home() {
+                    $(document).ready(function () {
+                        //ocultar personaje e informacion anterior
+                        $(".imgPersonaje").fadeOut();
+                        $(".cajaDios").fadeOut();
+                        //mostrar fondoHome
+                        $(".fondoHome").show();
+                    });
+                }
+
+                function vamana() {
+                    $(document).ready(function () {
+                        //ocualtar fondoHome
+                        $(".fondoHome").hide();
+                        //ocultar personaje e informacion anterior
+                        $(".imgPersonaje").fadeOut();
+                        $(".cajaDios").fadeOut();
+                        //cambiar informacion
+                        $("#titulo1").text('vamana');
+                        $(".parrafoCaja").text("Vamana es el quinto avatar o encarnación del Señor Vishnu.De El se dice a menudo que fue la mejor de las diez encarnaciones de Dios No deja de ser curioso, siendo mucho más populares y adoradas las encarnaciones de Rama y Krishna, o Narasimha, protector de los devotos.");
+                        //poner textura brahma
+                        $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/vamana.png");
+                        //mostrar personaje brahma
+                        $(".imgPersonaje").fadeIn(6000);
+                        //mostrar informacion de brahma
+                        $(".cajaDios").fadeIn(3000);
+                    });
+                }
+
+                function brahma() {
+                    $(document).ready(function () {
+                        //ocualtar fondoHome
+                        $(".fondoHome").hide();
+                        //ocultar personaje e informacion anterior
+                        $(".imgPersonaje").fadeOut();
+                        $(".cajaDios").fadeOut();
+                        //cambiar informacion
+                        $("#titulo1").text('brahma');
+                        $(".parrafoCaja").text('Es una deidad hindú que nace en el principio de la era cósmica dentro de una flor de loto que surge del ombligo de Visnú, al momento posterior de nacer, Brahma comienza a recitar los Vedas lo cual genera un anueva versión del mundo, por lo que, se le atribuye la creación del mundo.');
+                        //poner textura brahma
+                        $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/brahma.png");
+                        //mostrar personaje brahma
+                        $(".imgPersonaje").fadeIn(6000);
+                        //mostrar informacion de brahma
+                        $(".cajaDios").fadeIn(3000);
+                    });
+                }
+
+                function ganesha() {
+                    $(document).ready(function () {
+                        //ocualtar fondoHome
+                        $(".fondoHome").hide();
+                        //ocultar personaje e informacion anterior
+                        $(".imgPersonaje").fadeOut();
+                        $(".cajaDios").fadeOut();
+                        //cambiar informacion
+                        $("#titulo1").text('ganesha');
+                        $(".parrafoCaja").text('Ganesha hijo de la diosa Parvati y Shiva,Shiva cortó la cabeza de su hijo sin saber quién era.Ante el llanto de la desconsolada, Shiva prometió a Parvati que bajaría a la tierra y repondría la cabeza de su hijo con la del primer ser que encontrase.El primer ser en encontrar fue un elefante.');
+                        //poner textura brahma
+                        $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/ganesha.png");
+                        //mostrar personaje brahma
+                        $(".imgPersonaje").fadeIn(6000);
+                        //mostrar informacion de brahma
+                        $(".cajaDios").fadeIn(3000);
+                    });
+                }
+
+                function agni() {
+                    $(document).ready(function () {
+                        //ocualtar fondoHome
+                        $(".fondoHome").hide();
+                        //ocultar personaje e informacion anterior
+                        $(".imgPersonaje").fadeOut();
+                        $(".cajaDios").fadeOut();
+                        //cambiar informacion
+                        $("#titulo1").text('agni');
+                        $(".parrafoCaja").text('Agni, dios del fuego, y dios del sacrificio, nade de nuevo cada vez que se enciende un fuego. Se trata de uno de los principales dioses védicos (de la India primitiva), pero su rol se fue limitando lentamente, siendo sus atributos asumidos por Shiva o Skanda (parido por Agni tras un breve y agónico embarazo).');
+                        //poner textura brahma
+                        $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/agni.png");
+                        //mostrar personaje brahma
+                        $(".imgPersonaje").fadeIn(6000);
+                        //mostrar informacion de brahma
+                        $(".cajaDios").fadeIn(3000);
+                    });
+                }
+
+                function rama() {
+                    $(document).ready(function () {
+                        //ocualtar fondoHome
+                        $(".fondoHome").hide();
+                        //ocultar personaje e informacion anterior
+                        $(".imgPersonaje").fadeOut();
+                        $(".cajaDios").fadeOut();
+                        //poner textura brahma
+                        $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/rama.png");
+                        //cambiar informacion
+                        $("#titulo1").text('rama');
+                        $(".parrafoCaja").text('considerado como una figura histórica, es quizás el héroe más virtuoso de la mitología hindú,junto con su esposa Sita, son una imagen de pureza y devoción matrimonial.las aventuras de Rama reflejan la importancia y las recompensas del cumplimiento del deber piadoso odharma.');
+                        //mostrar personaje brahma
+                        $(".imgPersonaje").fadeIn(6000);
+                        //mostrar informacion de brahma
+                        $(".cajaDios").fadeIn(3000);
+                    });
+                }
+
+                function kali() {
+                    $(document).ready(function () {
+                        //ocualtar fondoHome
+                        $(".fondoHome").hide();
+                        //ocultar personaje e informacion anterior
+                        $(".imgPersonaje").fadeOut();
+                        $(".cajaDios").fadeOut();
+                        //cambiar informacion
+                        $("#titulo1").text('kali');
+                        $(".parrafoCaja").text('Es Una diosa principal, diosa de la muerte y la destrucción, pero también es la diosa de la regeneración y la liberación.Es la diosa terrible y sanguinaria, pero también la mujer madre que da la nueva vida a costa de su sacrificio.es una Diosa incomprendida en el panteon.');
+                        //poner textura brahma
+                        $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/kali.png");
+                        //mostrar personaje brahma
+                        $(".imgPersonaje").fadeIn(6000);
+                        //mostrar informacion de brahma
+                        $(".cajaDios").fadeIn(3000);
+                    });
+                }
+
+            </script>
+
+        </section>
+
+        <section id="DESARROLLADORES">
+            <div class="infoDesarrolladores">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front jessJ">
+                            <!-- <img src="images/Imagenes/DESAR/jessJ.jpg" alt="Avatar" class="foto"> -->
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="description">
+                                <h1>Jessica Orozco</h1>
+                                <p>Lider Tecnica, encargada de efectos</p>
+                                <p>Solucion de dudas y problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front alvaro">
+                            <!-- <img src="images/Imagenes/DESAR/alvaro.JPG" alt="Avatar" class="foto"> -->
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="description">
+                                <h1>Alvaro Meneses</h1>
+                                <p>Colaboro en la creación del </p>
+                                <p>maquetado de la pagina</p>
+                                <p>diseño y en la ejecucion del proyecto </p>
+                                <p> Ademas ayudo en el aporte de efectos backend.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front jess">
+                            <!-- <img src="images/Imagenes/DESAR/jess.JPG" alt="Avatar" class="foto"> -->
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="description">
+                                <h1>Jessica Guarin</h1>
+                                <p>Nuestra scrum Master , maquetacion efectos de</p>
+                                <p>la pagina llevando un norte fijo </p>
+                                <p> simpre una idea clara de las especificaciones. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front diego">
+                            <!-- <img src="images/Imagenes/DESAR/diego.jpg" alt="Avatar" class="foto"> -->
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="description">
+                                <h1>Diego Cruz</h1>
+                                <p>Encargado de manipualar las imagenes</p>
+                                <p>relevante respecto a las exigencias</p>
+                                <p>y efectos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front andrea">
+                            <!-- <img src="images/Imagenes/DESAR/andrea.jpg" alt="Avatar" class="foto"> -->
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="description">
+                                <h1>Paola Andrea Tiquidimas</h1>
+                                <p>Realización backend y frontend 
+                               </p>
+                                <p> ya que implemento los efectos</p>
+                                <p>creacion del efecto de nuestra animación principal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front cesar">
+                            <!-- <img src="images/Imagenes/DESAR/cesar.jpg" alt="Avatar" class="foto"> -->
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="description">
+                                <h1>Cristian Forero</h1>
+                                <p>Manipulo los parametros que el equipo debia usar</p>
+                                <p>responsable del responsive </p>
+                                <p>aporto ideas principales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer>
+        <div class="contenedor">
+            <p class="copy">
+                CodeINK; 2019
+            </p>
+            <br>
+            <p class="copy">
+                FullStack/BicTIA
+            </p>
+
+
+        </div>
+    </Footer>
+
+
+    <script src="images/JavaScript/JaScr.js"></script>
+
+
+</body>
+
+</html>

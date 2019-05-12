@@ -1,0 +1,181 @@
+
+.infoMito{
+    padding-top: 30px;
+    width: 100%;
+    height: 600px;
+    background-image: url(../Imagenes/fondo2.png);
+    /*background-size:  cover;*/
+    background-size:  100%;
+    /*position: relative;*/
+    top: -62px;
+    
+    
+}
+.infoMitoSS{
+    top: -100px;
+    width: 80%;
+    height: 180px;
+    opacity: 0.4;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.75);
+}
+
+.historia{
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 180%;
+    font-family: "shanln-font";
+}
+
+.infoDioses{
+
+    width: 100%;
+    height: 800px;
+    background-image: url(../Imagenes/fondo.png);
+    position: relative;
+}
+.infoMitoS{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.infoDesarrolladores{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url(../Imagenes/DESAR/fondodesa.png);
+   
+    padding-top: 45px;
+}
+
+
+
+
+
+
+
+
+#blog h4, h2{
+    text-align: center;
+    color: white;
+}
+
+
+/*fotos desarrolladore*/
+
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    padding: 15px;
+    
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+   
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front {
+    position: absolute;
+    width:100%;
+    height:100%;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-back {
+    width:100%;
+    height:100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  /* .flip-card-front {
+    
+  
+    color: black;
+    z-index: 2;
+    
+
+  }
+  
+  .flip-card-back {
+    background-image: url(../Imagenes/DESAR/desc.jpg);
+    color:black;
+    transform: rotateY(180deg);
+    z-index: 1;
+    border-radius: 50%;
+  } */
+
+  .flip-card-front {
+    color: black;
+    z-index: 2;
+    border-radius: 50%;
+    background-size: cover;
+  }
+
+  .jessJ {
+    background-image: url(../Imagenes/DESAR/jessJ.jpg);
+  }
+  .alvaro {
+    background-image: url(../Imagenes/DESAR/alvaro.JPG);
+  }
+  .jess {
+    background-image: url(../Imagenes/DESAR/jess.JPG);
+  }
+  .diego {
+    background-image: url(../Imagenes/DESAR/diego.jpg);
+  }  
+  .andrea {
+    background-image: url(../Imagenes/DESAR/andrea.jpg);
+  }
+  .cesar {
+    background-image: url(../Imagenes/DESAR/cesar.jpg);
+  }
+
+
+  .flip-card-back {
+    background-image: url(../Imagenes/DESAR/desc.jpg);
+    color: black;
+    transform: rotateY(180deg);
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+
+
+  /* .foto{
+    width:245px;
+    height:250px;
+    /* border-radius: 50%; 
+  } */
+  .description {
+    padding-top: 15%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .description h1{
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .description p {
+    font-size: 15px;
+    text-align: center;
+    color: black;
+  }
