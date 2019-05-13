@@ -89,17 +89,18 @@ ul.menuDioses li a:active:before {
 
 .eyes {
     position: absolute;
-    top: 105%;
-    left: 365px;
+    /*top: 112%;*/
+    top: 98px;
+    left: 44px;
     transform: translateY(-50%);
-    width: 72px;
+    width: 60px;
     text-align: center;
 }
 
 .eye {
     width: 18px;
     height: 12px;
-   
+    
     display: inline-block;
     margin: 3px;
     border-radius: 50%;

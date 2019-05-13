@@ -175,7 +175,8 @@ box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.75);
   }
 
   .description p {
-    font-size: 15px;
+    font-family: "alcazar-regular-font";
+    font-size: 16px;
     text-align: center;
     color: black;
   }

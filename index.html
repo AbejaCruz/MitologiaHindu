@@ -26,20 +26,6 @@
 </head>
 
 <script>
-    //CONFIGURACION OJOS HEADER ------------------------------------------------------
-    var ojos = document.getElementsByClassName('pupila');
-    document.onmousemove = function () {
-        var x = event.clientX * 100 / window.innerWidth + "%";
-        var y = event.clientY * 100 / window.innerHeight + "%";
-
-        for (let index = 0; index < 2; index++) {
-            ojos[index].style.left = x;
-            ojos[index].style.top = y;
-            ojos[index].style.transform = "translate(-" + x + ", -" + y + ")";
-
-
-        }
-    }
 
     //CONFIGURACION PAUSA/PLAY MUSICA ------------------------------------------------------
 
@@ -92,18 +78,6 @@
 
         <img class="logoImagen" src="images/imagenes/logo.png" alt="abc" title="imagen abc" />
 
-        <!--  Ojos que se mueven-->
-        <div class="fondo">
-            <div class="eyes">
-                <div class="eye">
-                    <div class="pupila"></div>
-                </div>
-                <div class="eye">
-                    <div class="pupila"></div>
-                </div>
-            </div>
-        </div>
-
         <a id="logo-header" href="#DESARROLLADORES2">
             <span class="site-name">By CodeInk</span>
             <span class="site-desc">FullStack / Bictia</span>
@@ -118,6 +92,106 @@
                         <img src="images/imagenes/audioOn.png" style="height: 15px;"></a></li>
             </ul>
         </nav>
+
+        
+
+        <!--(Draggable DIV Element)------------------------------------------------------------------------------------>
+
+
+        <div id="dragg">
+            <!--  Ojos que se mueven-->
+            <div class="fondo">
+                <div class="eyes">
+                    <div class="eye">
+                        <div class="pupila"></div>
+                    </div>
+                    <div class="eye">
+                        <div class="pupila"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="draggheader">
+                <img class="draggImg" src="images/imagenes/cabeza.png" />
+            </div>
+        </div>
+
+        <script>
+            //Make the DIV element draggagle:-------------------------------------------------------------------
+            dragElement(document.getElementById("dragg"));
+
+            function dragElement(elmnt) {
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                if (document.getElementById(elmnt.id + "header")) {
+                    /* if present, the header is where you move the DIV from:*/
+                    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                } else {
+                    /* otherwise, move the DIV from anywhere inside the DIV:*/
+                    elmnt.onmousedown = dragMouseDown;
+                }
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    /* stop moving when mouse button is released:*/
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+
+
+                    //CONFIGURACION OJOS HEADER ----------------------------------------------------------------------OJOS
+                    var ojos = document.getElementsByClassName('pupila');
+                    document.onmousemove = function () {
+                        var x = event.clientX * 100 / window.innerWidth + "%";
+                        var y = event.clientY * 100 / window.innerHeight + "%";
+
+                        for (let index = 0; index < 2; index++) {
+                            ojos[index].style.left = x;
+                            ojos[index].style.top = y;
+                            ojos[index].style.transform = "translate(-" + x + ", -" + y + ")";
+
+
+                        }
+                    }
+                }
+            }
+
+            //CONFIGURACION OJOS HEADER ------------------------------------------------------
+            var ojos = document.getElementsByClassName('pupila');
+            document.onmousemove = function () {
+                var x = event.clientX * 100 / window.innerWidth + "%";
+                var y = event.clientY * 100 / window.innerHeight + "%";
+
+                for (let index = 0; index < 2; index++) {
+                    ojos[index].style.left = x;
+                    ojos[index].style.top = y;
+                    ojos[index].style.transform = "translate(-" + x + ", -" + y + ")";
+
+
+                }
+            }
+        </script>
 
     </header><!-- / #main-header -->
 
@@ -438,9 +512,9 @@
                         <div class="flip-card-back">
                             <div class="description">
                                 <h1>Cristian Forero</h1>
-                                <p>Manipulo los parametros que el equipo debia usar</p>
-                                <p>responsable del responsive </p>
-                                <p>aporto ideas principales.</p>
+                                <p>Ayudo en la Maquetacion y</p>
+                                <p>  propuestas de diseño.</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -448,20 +522,18 @@
             </div>
         </section>
     </main>
+
+
     <Footer>
         <div class="contenedor">
+                
+            <img class="imgFooter" src="images/imagenes/codeInkLogo.png"/>
             <p class="copy">
-                CodeINK; 2019
+                  CodeInk 2019  / Todos los derechos reservados / Powered By: 
             </p>
-            <br>
-            <p class="copy">
-                FullStack/BicTIA
-            </p>
-
-
+            <img class="imgFooter" src="images/imagenes/bictiaLogo.png"/>
         </div>
     </Footer>
-
 
     <script src="images/JavaScript/JaScr.js"></script>
 
