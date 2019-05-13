@@ -9,6 +9,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script  type="text/javascript" src="images/JavaScript/jquery.adipoli.min.js"></script>
+    <script  type="text/javascript" src="images/JavaScript/jquery.adipoli.js"></script>
+    <script  type="text/javascript" src="images/JavaScript/jquery-3.4.1.min.js"></script>
+
+
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -69,6 +75,11 @@
         x.className = "show";
         setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
     }
+
+    //funcion de adipoli
+    $(document).ready(function(){
+        $(".imgPersonaje").adipoli();
+    });
 
 </script>
 
@@ -222,7 +233,8 @@
                         //poner textura brahma
                         $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/vamana.png");
                         //mostrar personaje brahma
-                        $(".imgPersonaje").fadeIn(6000);
+                        //$(".imgPersonaje").fadeIn(6000);
+                        $(".imgPersonaje").slideDown(6000);
                         //mostrar informacion de brahma
                         $(".cajaDios").fadeIn(3000);
                     });
@@ -241,7 +253,8 @@
                         //poner textura brahma
                         $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/brahma.png");
                         //mostrar personaje brahma
-                        $(".imgPersonaje").fadeIn(4000);
+                        //$(".imgPersonaje").fadeIn(4000);
+                        $(".imgPersonaje").fadeToggle(4000);
                         //mostrar informacion de brahma
                         $(".cajaDios").fadeIn(2000);
                     });
@@ -260,7 +273,9 @@
                         //poner textura brahma
                         $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/ganesha.png");
                         //mostrar personaje brahma
-                        $(".imgPersonaje").fadeIn(6000);
+                        //$(".imgPersonaje").fadeIn(6000);
+                        $(".imgPersonaje").toggle(5000);
+                     
                         //mostrar informacion de brahma
                         $(".cajaDios").fadeIn(3000);
                     });
@@ -280,6 +295,9 @@
                         $(".imgPersonaje").attr("src", "images/Imagenes/infoDioses/agni.png");
                         //mostrar personaje brahma
                         $(".imgPersonaje").fadeIn(8000);
+                        $(".imgPersonaje").slideUp(8000)
+                        $(".imgPersonaje").fadeDown(8000);
+
                         //mostrar informacion de brahma
                         $(".cajaDios").fadeIn(4000);
                     });
@@ -299,6 +317,9 @@
                         $(".parrafoCaja").text('considerado como una figura histórica, es quizás el héroe más virtuoso de la mitología hindú,junto con su esposa Sita, son una imagen de pureza y devoción matrimonial.las aventuras de Rama reflejan la importancia y las recompensas del cumplimiento del deber piadoso odharma.');
                         //mostrar personaje brahma
                         $(".imgPersonaje").fadeIn(5000);
+                        $(".imgPersonaje").fadeOut(5000);
+                        $(".imgPersonaje").fadeIn(5000);
+
                         //mostrar informacion de brahma
                         $(".cajaDios").fadeIn(2000);
                     });
